@@ -61,7 +61,7 @@ public class InventoryManagement {
 						inventoryList = OopsUtil.insertNewInventory(arr[inventoryname], listOFInventories);
 						originfile.add(inventoryList);
 					}
-					System.out.println("wish to add some more inventorry(1 or 0)");
+					System.out.println("wish to add some more inventory(1 or 0)");
 					ref = OopsUtil.readInteger();
 					
 					

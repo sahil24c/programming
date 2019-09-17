@@ -145,21 +145,32 @@ public class Stocky {
 		
 	}
 
-	static public void totalAccount()
+	static public long totalAccount()
 	{
-		for(Stokes myMan : myStokes)
-		{
-		int total = myMan.getNumber_of_shares();
+		long totalStocks = 0;
+		for (int i = 0; i < myMan.size(); i++) {
+			totalStocks += ((Stocks) myMan.get(i)).getNumber_of_shares();
 		}
+		return totalStocks;
 	}
 
-	static public void save()
+	static public void save() throws JsonParseException, JsonMappingException, IOException
 	{
-
+		ObjectMapper obj = new ObjectMapper();
+	File file = new File ("stocky.json");
+	myMan = obj.readValue (file,new TypeReference<Map<String, List<Stocks>>>() {	});
+	obj.writeValue(file, myMan);
+	System.out.println("file saved");
 	}
 
-	static public void print()
+	static public void print() throws JsonParseException, JsonMappingException, IOException
 	{
 
+		ObjectMapper obj = new ObjectMapper();
+	File file = new File ("stocky.json");
+	myMan = obj.readValue (file,new TypeReference<Map<String, List<Stocks>>>() {	});
+	for (int i = 0; i < myMan.size(); i++) {
+		System.out.println(((Stocks) myMan.get(i)).getNumber_of_shares());
+	}
 	}
 }

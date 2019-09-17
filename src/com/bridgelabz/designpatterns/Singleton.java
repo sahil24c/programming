@@ -16,7 +16,7 @@ import javax.management.RuntimeErrorException;
 
 class EagerInitialization
 {
-	static EagerInitialization instance = new EagerInitialization();
+	private static EagerInitialization instance = new EagerInitialization();
 
 	private EagerInitialization() {
 		// TODO Auto-generated constructor stub

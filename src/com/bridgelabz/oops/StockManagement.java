@@ -29,29 +29,33 @@ public class StockManagement {
 	static List <StockClass> stocks = new ArrayList<StockClass>();
 	static List <StockPortfolio> stocking = new ArrayList<StockPortfolio>();
 	static StockPortfolio stockk = new StockPortfolio();
-	  public static void main(String[] args) throws Exception
-	
-	  {
-			
-	int k = 0;
-	System.out.println("enter\n 1.Create a new account\n 2.Total value of account\n 3.Buy shares \n"
-			+ " 4.Sell shares \n 5.Save account \n 6.Print detailed report. ");
-	switch(OopsUtil.readInteger())
+	public static void main(String[] args) throws Exception
+
 	{
-	case(1):Stocky.newAccount();
-	break;
-	case(2):Stocky.totalAccount();
-	break;
-	case(3):Stocky.buy();
-	break;
-	case(4):Stocky.sell();
-	break;
-	case(5):Stocky.save();
-	break;
-	case(6):Stocky.print();
-	break;
-	default : System.out.println("please enter valid input");
-	}
-}	
+		int z= 0;
+		do {	
+			int k = 0;
+			System.out.println("enter\n 1.Create a new account\n 2.Total value of account\n 3.Buy shares \n"
+					+ " 4.Sell shares \n 5.Save account \n 6.Print detailed report. ");
+			switch(OopsUtil.readInteger())
+			{
+			case(1):Stocky.newAccount();
+			break;
+			case(2):Stocky.totalAccount();
+			break;
+			case(3):Stocky.buy();
+			break;
+			case(4):Stocky.sell();
+			break;
+			case(5):Stocky.save();
+			break;
+			case(6):Stocky.print();
+			break;
+			default : System.out.println("please enter valid input");
+			}
+			System.out.println("Press 1 to continue");
+			z=OopsUtil.readInteger();
+		}  while (z==1);
+	}	
 }
 
